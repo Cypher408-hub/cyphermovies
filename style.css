@@ -1,0 +1,597 @@
+/* --- RESET (Basic Setup) --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Makes sizing elements much easier */
+    font-family: 'Arial', sans-serif;
+}
+
+/* --- VARIABLES --- */
+:root {
+    /* Light Mode (Default) */
+    --primary-color: #2563eb; 
+    --dark-bg: #1e293b;       
+    --light-bg: #f8fafc;      
+    --text-color: #334155;    
+    --card-bg: white;
+}
+
+/* Dark Mode Overrides */
+.dark-mode {
+    --primary-color: #60a5fa; /* Lighter blue for dark mode */
+    --dark-bg: #0f172a;       /* Very dark blue/black */
+    --light-bg: #1e293b;      /* Dark grey */
+    --text-color: #e2e8f0;    /* Light white text */
+    --card-bg: #334155;       /* Dark card background */
+}
+
+body {
+    background-color: var(--light-bg); /* Applies the variable background */
+    transition: background-color 0.3s, color 0.3s; /* Smooth fade effect */
+}
+
+/* --- BUTTON STYLING --- */
+.theme-btn {
+    background: none;
+    border: 2px solid var(--text-color);
+    color: var(--text-color);
+    padding: 5px 10px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 20px; /* Spacing from the menu */
+    transition: 0.3s;
+}
+
+.theme-btn:hover {
+    background-color: var(--text-color);
+    color: var(--light-bg);
+}
+
+/* UPDATE CARD BACKGROUND TO USE VARIABLE */
+.card {
+    background: var(--card-bg); /* Changed from 'white' to variable */
+}
+
+/* --- VARIABLES (Easy Color Changes) --- */
+:root {
+    --primary-color: #2563eb; /* Blue */
+    --dark-bg: #1e293b;       /* Dark Grey */
+    --light-bg: #f8fafc;      /* White/Grey */
+    --text-color: #334155;    /* Dark Text */
+}
+
+body {
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+/* --- NAVIGATION --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    /* Use the variable for a smooth transition */
+    background-color: var(--card-bg); 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+/* NEW: Styles the wrapper containing links and the button */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Space between the links and the button */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: bold;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+/* --- BUTTON STYLING --- */
+/* (Make sure the theme-btn styles are using the CSS variables) */
+.theme-btn {
+    background: none;
+    /* Use text color variable for the border in both modes */
+    border: 2px solid var(--text-color); 
+    color: var(--text-color);
+    padding: 5px 10px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.theme-btn:hover {
+    background-color: var(--text-color);
+    color: var(--light-bg); /* Use light background for hover text color */
+}
+
+/* --- HERO SECTION --- */
+.hero {
+    height: 90vh; /* 90% of the screen height */
+    background-color: var(--light-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.highlight {
+    color: var(--primary-color);
+}
+
+/* --- COMMON SECTIONS --- */
+.container {
+    padding: 4rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    color: var(--text-color); /* Ensures title text changes color */
+}
+
+/* --- ABOUT SECTION (Grid Layout) --- */
+.about-grid {
+    display: flex;
+    flex-wrap: wrap; /* Wraps to next line on mobile */
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.profile-pic {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%; /* Makes image a circle */
+    object-fit: cover;
+    border: 5px solid var(--primary-color);
+}
+
+/* --- PROJECTS (Card Layout) --- */
+.projects-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.card {
+    /* Uses the dark mode variable for background */
+    background: var(--card-bg); 
+    /* Uses the text color variable for border */
+    border: 1px solid var(--text-color); 
+    border-radius: 8px;
+    width: 300px;
+    padding: 20px;
+    /* Uses a slight shadow that works in both modes */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Slight lift effect on hover */
+    /* Darken border color on hover */
+    border-color: var(--primary-color); 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.card-content h3 {
+    margin-bottom: 0.5rem;
+    color: var(--text-color); /* Ensures title text color changes */
+}
+
+.card-link {
+    display: inline-block;
+    margin-top: 10px;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* --- FOOTER --- */
+.footer {
+    background-color: var(--dark-bg);
+    color: white;
+    text-align: center;
+    padding: 3rem 1rem;
+}
+
+.btn {
+    display: inline-block;
+    background: var(--primary-color);
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 1rem;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+/* ======================================= */
+/* ====== MEDIA QUERIES (RESPONSIVENESS) ====== */
+/* ======================================= */
+
+/* Target screens smaller than 768px (e.g., Tablets and Phones) */
+@media (max-width: 768px) {
+    
+    /* 1. NAVIGATION BAR CHANGES */
+    .navbar {
+        flex-direction: column; /* Stack logo and menu vertically */
+        padding: 1rem 5%;
+        gap: 15px;
+    }
+    
+    .nav-right {
+        /* Ensure links and button are horizontally centered/aligned */
+        justify-content: center;
+        width: 100%;
+    }
+    
+    .nav-links {
+        /* Reduce gap for tighter horizontal fit */
+        gap: 15px; 
+    }
+
+    /* 2. HERO SECTION CHANGES */
+    .hero {
+        height: 70vh; /* Make the hero smaller on mobile */
+    }
+
+    .hero h1 {
+        font-size: 2rem; /* Reduce large heading size */
+    }
+
+    /* 3. ABOUT SECTION CHANGES */
+    .about-grid {
+        /* The flex-wrap property already handles stacking, 
+           but we ensure the image doesn't dominate */
+        flex-direction: column; 
+    }
+
+    .profile-pic {
+        width: 200px;
+        height: 200px;
+        margin-bottom: 1rem;
+    }
+
+    /* 4. PROJECTS SECTION CHANGES */
+    .card {
+        /* Make the cards take up the full width minus padding, 
+           forcing them to stack vertically */
+        width: 100%; 
+        max-width: 400px; 
+    }
+
+    /* 5. CONTACT SECTION CHANGES */
+    .contact .contact-form {
+        /* Make the cards take up the full width minus padding, 
+           forcing them to stack vertically */
+        width: 100%; 
+        max-width: 400px;
+    }
+}
+
+/* Target screens smaller than 480px (e.g., small Phones and 320px viewports) */
+@media (max-width: 480px) {
+
+    /* Global adjustments */
+    .container {
+        /* Reduce side padding for maximum content space */
+        padding: 2rem 3%; 
+    }
+
+    /* 1. NAVIGATION BAR CHANGES */
+    .navbar {
+        /* Reduce overall padding on the navbar */
+        padding: 0.8rem 3%;
+        /* Ensure the nav-right components stack, 
+           as links might not fit side-by-side */
+        flex-direction: column; 
+    }
+
+    .nav-right {
+        /* Stack the links and the button */
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .nav-links {
+        /* Ensure links stay horizontal and wrap if necessary */
+        flex-wrap: wrap; 
+        justify-content: center;
+        width: 100%;
+    }
+    
+    .nav-links li {
+        margin: 5px 0;
+    }
+
+    /* 2. HERO SECTION CHANGES */
+    .hero h1 {
+        font-size: 1.8rem; /* Make heading smaller */
+    }
+
+    .hero p {
+        font-size: 0.9rem; /* Make paragraph text smaller */
+    }
+
+    /* 3. FOOTER/CONTACT SECTION CHANGES */
+    .contact h2 {
+        font-size: 1.5rem; /* Reduce footer heading size */
+    }
+}
+
+
+/* --- CONTACT FORM STYLES --- */
+.contact {
+    padding: 4rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact-head {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    color: var(--text-color); /* Ensures title text changes color */
+}
+
+.contact-detail {
+    display: flex;
+    flex-wrap: wrap; /* Wraps to next line on mobile */
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 2rem auto 3rem auto; /* Centers the form and gives vertical space */
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.contact-form label {
+    display: block; /* Makes the label take up its own line */
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--text-color); /* Uses variable for dark/light text color */
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--text-color); 
+    border-radius: 4px;
+    background-color: var(--card-bg); /* Use card background for fields */
+    color: var(--text-color);
+    transition: border-color 0.3s;
+    /* Ensure the inputs don't inherit the large footer padding */
+    box-sizing: border-box; 
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+/* Make the button look good in the footer */
+.contact .btn {
+    width: 100%;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+/*Success html style*/
+.success {
+    text-align: center;
+    padding: 100px;
+}
+
+.success .btn{
+    margin-top: 20px;
+}
+
+/* --- MOVIE DISCOVERY STYLES --- */
+.search-form {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3rem;
+    gap: 10px;
+}
+
+#search-term {
+    padding: 10px;
+    width: 60%;
+    max-width: 400px;
+    border: 2px solid var(--text-color);
+    border-radius: 5px;
+    background-color: var(--card-bg);
+    color: var(--text-color);
+}
+
+.movies-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+/* Movie Card Styles (Similar to your existing .card) */
+.movie-card {
+    background: var(--card-bg);
+    border: 1px solid var(--text-color);
+    border-radius: 10px;
+    width: 180px;
+    overflow: hidden; /* Keeps content inside rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s;
+    text-align: center;
+    cursor: pointer; /* Change cursor to indicate clickability */
+}
+
+.movie-card:hover {
+    transform: scale(1.05);
+}
+
+.movie-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.movie-info {
+    padding: 15px;
+}
+
+.movie-info h3 {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    color: var(--primary-color);
+}
+
+.rating {
+    font-weight: bold;
+    color: green;
+}
+
+.placeholder-text {
+    color: var(--text-color);
+    font-style: italic;
+}
+
+/* Responsive adjustments for the search bar on small screens */
+@media (max-width: 600px) {
+    .search-form {
+        flex-direction: column;
+        align-items: center;
+    }
+    #search-term {
+        width: 90%;
+        max-width: none;
+    }
+    .btn {
+        width: 90%;
+    }
+    .movie-card {
+        width: 100%; /* Ensure cards still stack on mobile */
+        max-width: 300px; 
+    }
+}
+
+
+@media (max-width: 480px) {
+    
+.movies-grid {
+        display: flex;
+        flex-wrap: wrap; /* Allows items to wrap to the next line */
+        overflow-x: hidden; /* Prevents unwanted horizontal scrolling */
+        
+        /* Aligns items to the left (start of the container) */
+        justify-content: flex-start;
+        
+        /* Set padding on the container to prevent items from sticking to the screen edge */
+        padding: 0 5px; 
+        
+        /* Reduce the gap size between rows */
+        gap: 10px;
+    }
+    
+    .movie-card {
+        /* CRITICAL: Use calc() to set a width that perfectly allows two items per row, 
+           minus the gap between them. (45% for two items, 30% for three) */
+        width: calc(50% - 10px); 
+        max-width: 200px; 
+        
+        /* Reset margins as they are now handled by the 'gap' property on .movies-grid */
+        margin: 0; 
+        
+        /* Ensure the card is full-width if it's the only one on a line */
+        box-sizing: border-box; 
+        
+        padding: 0;
+        border: none;
+    }
+
+    .movie-card .movie-info {
+        /* CRITICAL: This MUST be set to hide the content by default on mobile */
+        display: none; 
+        
+        padding: 10px;
+        text-align: left;
+        /* Ensure background and color are set for when it DOES expand */
+        background-color: var(--card-bg);
+        color: var(--text-color);
+        border-top: 1px solid var(--text-color);
+    }
+
+    .movie-card.expanded .movie-info {
+        /* This is the rule that overrides 'display: none;' on click */
+        display: block; 
+    }
+}
+
+/* --- MOVIE DISCOVERY STYLES --- */
+/* ... other styles for .search-form ... */
+
+.movie-card {
+    /* Uses the dark mode variable for background */
+    background: var(--card-bg); 
+    /* Uses the text color variable for border */
+    border: 1px solid var(--text-color); 
+    border-radius: 10px;
+    /* ... rest of the card styles ... */
+    text-align: center;
+}
+
+.movie-info h3,
+.movie-info p,
+.placeholder-text {
+    /* Ensures text color flips when dark mode is on */
+    color: var(--text-color); 
+}
+
+.rating {
+    font-weight: bold;
+    color: var(--primary-color); /* Use primary color for rating */
+}
